@@ -11,7 +11,30 @@ genre_map = {
     "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos"],
 }
 
-fullname_country = { }
+fullname_country = {
+    "US": "United States",
+    "KR": "South Korea",
+    "GB": "United Kingdom",
+    "PR": "Puerto Rico",
+    "SE": "Sweden",
+    "AU": "Australia",
+    "JM": "Jamaica",
+    "IT": "Italy",
+    "CA": "Canada",
+    "MX": "Mexico",
+    "CO": "Colombia",
+    "JP": "Japan",
+    "FR": "France",
+    "IE": "Ireland",
+    "NO": "Norway",
+}
+
+# country domain --> fullname country
+def country_domain_to_fullname_country(domain_name: str) -> str:
+    for domain, country in country_domain_to_fullname_country.items():
+        if domain == domain_name:
+            return country
+    return domain
 
 # days is based on longevity
 def categorize_longevity(days):
