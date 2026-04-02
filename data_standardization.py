@@ -8,7 +8,7 @@ genre_map = {
     "R&B": ["R&B", "Contemporary R&B", "Soul", "Pop Soul"],
     "Latin": ["Reggaeton", "Regional Mexicano", "Regional Mexican", "Latin", "Dancehall"],
     "Electronic": ["Electronic", "Dance", "Dance-Pop"],
-    "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos", "Uk Garage", "Official Charts", 'Girl Group'],
+    "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos", "Uk Garage", "Offizielle Charts", 'Girl Group'],
 }
 
 fullname_country = {
