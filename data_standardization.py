@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 genre_map = {
     "Pop": ["Pop", "K-Pop", "Alternative Pop", "Synth-Pop", "Indie Pop", "Folk Pop", "Dance-Pop"],
     "Rock": ["Rock", "Alternative Rock", "Indie Rock", "Psychedelic Rock", "Hard Rock", "Nu Metal", "Grunge", "Britpop", "Swamp Rock", "New Wave"],
@@ -8,6 +11,32 @@ genre_map = {
     "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos"],
 }
 
+fullname_country = { }
+
+# days is based on longevity
+def categorize_longevity(days):
+    if pd.isna(days):
+        return 'Unknown'
+    elif days <= 30:
+        return 'New'
+    elif days <= 100:
+        return 'Stable Hit'
+    else:
+        return 'Evergreen'
+
+# popularity is based on streams
+def categorize_popularity(streams):
+    if pd.isna(streams):
+        return 'Unknown'
+    elif streams >= 5_000_000:
+        return 'Viral'
+    elif streams >= 3_000_000:
+        return 'Trending'
+    elif streams >= 1_500_000:
+        return 'Stable'
+    else:
+        return 'Declining'
+    
 def subgenre_to_main_genre(subgenre: str) -> str:
     for main_genre, subgenres in genre_map.items():
         if subgenre in subgenres:
