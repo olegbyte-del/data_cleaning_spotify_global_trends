@@ -8,7 +8,7 @@ genre_map = {
     "R&B": ["R&B", "Contemporary R&B", "Soul", "Pop Soul"],
     "Latin": ["Reggaeton", "Regional Mexicano", "Regional Mexican", "Latin", "Dancehall"],
     "Electronic": ["Electronic", "Dance", "Dance-Pop"],
-    "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos"],
+    "Uncategorized": ["Billboard Hot 100", "Toronto", "Soundtrack", "Special Purpose Artist", "Dolby Atmos", "Uk Garage", "Official Charts", 'Girl Group'],
 }
 
 fullname_country = {
@@ -27,14 +27,18 @@ fullname_country = {
     "FR": "France",
     "IE": "Ireland",
     "NO": "Norway",
+    "England": "United Kingdom",
+    "Florida": "United States",
+    "Culiacán": "Mexico",
+    "Monterrey": "Mexico",
 }
 
 # country domain --> fullname country
 def country_domain_to_fullname_country(domain_name: str) -> str:
-    for domain, country in country_domain_to_fullname_country.items():
+    for domain, country in fullname_country.items():
         if domain == domain_name:
             return country
-    return domain
+    return domain_name
 
 # days is based on longevity
 def categorize_longevity(days):
